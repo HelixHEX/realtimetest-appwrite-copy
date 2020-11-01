@@ -21,14 +21,14 @@ import ThemeProvider from "@chakra-ui/core/dist/ThemeProvider";
 import theme from "@chakra-ui/core/dist/theme";
 
 const subscriptionClient = new SubscriptionClient(
-  "ws://localhost:5000/graphql",
+  "ws://25fe7a9f964b.ngrok.io/graphql",
   {
     reconnect: true,
   }
 );
 
 const client = createClient({
-  url: "http://localhost:5000/graphql",
+  url: "https://25fe7a9f964b.ngrok.iographql",
   exchanges: [
     ...defaultExchanges,
     subscriptionExchange({
