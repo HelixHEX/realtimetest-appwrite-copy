@@ -1,0 +1,8 @@
+mutation Send($message:String!, $senderName:String!) {
+  send(input: {message:$message, senderName:$senderName}) {
+    message {
+      message
+      senderName
+    }
+  }
+}

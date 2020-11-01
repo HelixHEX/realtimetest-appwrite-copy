@@ -1,0 +1,7 @@
+subscription newMessage{
+  newMessage {
+      id
+      message
+      senderName
+  }
+}

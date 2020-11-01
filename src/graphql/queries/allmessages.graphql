@@ -1,0 +1,9 @@
+query allmessages{
+  allMessages {
+    messages {
+      id
+      message
+      senderName
+    }
+  }
+}
