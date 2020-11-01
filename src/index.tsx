@@ -28,7 +28,7 @@ const subscriptionClient = new SubscriptionClient(
 );
 
 const client = createClient({
-  url: "https://25fe7a9f964b.ngrok.iographql",
+  url: "https://25fe7a9f964b.ngrok.io/graphql",
   exchanges: [
     ...defaultExchanges,
     subscriptionExchange({
