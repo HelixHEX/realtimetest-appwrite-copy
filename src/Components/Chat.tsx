@@ -1,25 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  useAllmessagesQuery,
-  useNewMessageSubscription,
   useSendMutation,
 } from "../generated/graphql";
-import { store, useGlobalState } from "state-pool";
-import { Link, useHistory } from "react-router-dom";
-import { ChatFeed, Message } from "react-chat-ui";
-import { Subscription, useMutation, useQuery, useSubscription } from "urql";
-import "../css/chat.css";
-import { ChatBubble } from "react-chat-ui";
-import { animateScroll } from "react-scroll";
-import ScrollToBottom, { useScrollToBottom, useSticky} from 'react-scroll-to-bottom'
-import {
-  atom,
-  useRecoilState,
-  useRecoilValue,
-  useSetRecoilState,
-} from "recoil";
-import { Box, Button, Flex, Grid, Input } from "@chakra-ui/core";
-import { messsagesState } from "../recoil/atom";
+import {  useGlobalState } from "state-pool";
+import {  useHistory } from "react-router-dom";
+import { ChatFeed } from "react-chat-ui";
+import {  useMutation, useQuery, useSubscription } from "urql";
+import "../css/chat.css"; 
+import { Box, Button, Flex, Grid } from "@chakra-ui/core";
 import { Form, Formik } from "formik";
 import { InputField } from "./InputField";
 
@@ -33,7 +21,7 @@ subscription {
   }
 }
 `;
-
+//sometimes works
 const allMessagesQuery = `
 query {
   allMessages {
@@ -63,7 +51,6 @@ const Chat: React.FC<chatProps> = () => {
   const [{ data, fetching, error }]: any = useQuery({query: allMessagesQuery});
   const [result] = useSubscription({ query: newMessageQuery });
   const [messages, setMessages] = useState<String[]>([]);
-  const [isLoading, setLoading] = useState(true);
   let history = useHistory();
   const scrollToBottom = () => window.scrollTo({
     top:document.documentElement.scrollHeight,

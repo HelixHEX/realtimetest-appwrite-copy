@@ -6,12 +6,8 @@ import * as serviceWorker from "./serviceWorker";
 
 import {
   Provider,
-  Client,
-  dedupExchange,
-  fetchExchange,
   subscriptionExchange,
   createClient,
-  Subscription,
   defaultExchanges,
 } from "urql";
 import { SubscriptionClient } from "subscriptions-transport-ws";
