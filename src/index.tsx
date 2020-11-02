@@ -19,7 +19,7 @@ import theme from "@chakra-ui/core/dist/theme";
 const subscriptionClient = new SubscriptionClient(
   "ws://25fe7a9f964b.ngrok.io/graphql",
   {
-    reconnect: true,
+    reconnect: true, 
   }
 );
 
